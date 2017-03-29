@@ -7,7 +7,7 @@ set(VERSION_MINOR 0)
 set(VERSION_PATCH 1)
 set(VERSION_STRING ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH})
 
-set(BUILD_SHARED_LIBS ON CACHE BOOL "Build shared lib")
+set(BUILD_SHARED_LIBS OFF CACHE BOOL "Build shared lib")
 
 set(LIB_SRC src/apu2_gpio.c)
 
