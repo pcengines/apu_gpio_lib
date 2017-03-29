@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 
-project(apu2_gpio)
+project(apu2_gpio C)
 
 set(VERSION_MAJOR 0)
 set(VERSION_MINOR 1)
