@@ -30,7 +30,10 @@ Example
 
 After compilation. Examples are in dir `build/example`.
 * `blinky` - it blinks the LED2 and LED3 on APU.
-* `simswap` - changes the simswap pin value. Usage: `./simswap value`
+* `simswap` - changes the simswap pin value. Usage:
+    * `./simswap`   - shows current pin state
+    * `./simswap 1` - sets the simswap pin value to 1
+    * `./simswap 0` - sets the simswap pin value to 0
 
 Library API
 -----------
