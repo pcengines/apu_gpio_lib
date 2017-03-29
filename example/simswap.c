@@ -11,9 +11,15 @@ int main(int argc, char *argv[]) {
     int status;
     int val;
 
-    if (argc < 2) {
-        usage(argv[0]);
+    status = apu_gpio_init();
+    if (status < 0) {
+        printf("can't initialize the gpio lib: %d\n", status);
         return -1;
+    }
+
+    if (argc < 2) {
+        printf("simswap current value: %d\n", apu_gpio_get_val(APU_SIMSWAP));
+        return 0;
     }
 
     switch (argv[1][0]) {
@@ -28,22 +34,21 @@ int main(int argc, char *argv[]) {
             return -1;
     }
 
-    status = apu_gpio_init();
-    if (status < 0) {
-        printf("can't initialize the gpio lib: %d\n", status);
-        return -1;
-    }
-
-    status = apu_gpio_set_dir(APU_SIMSWAP, APU_DIR_OUT);
-    if (status < 0) {
-        printf("can't set the simswap direction: %d\n", status);
-        return -1;
+    if (apu_gpio_get_dir(APU_SIMSWAP) != APU_DIR_OUT) {
+        printf("changing simswap pin direction to out\n");
+        status = apu_gpio_set_dir(APU_SIMSWAP, APU_DIR_OUT);
+        if (status < 0) {
+            printf("can't set the simswap direction: %d\n", status);
+            return -1;
+        }
     }
 
     status = apu_gpio_set_val(APU_SIMSWAP, val);
     if (status < 0) {
         printf("can't set the simswap value: %d\n", status);
     }
+
+    printf("simswap current value: %d\n", apu_gpio_get_val(APU_SIMSWAP));
 
     return 0;
 }
