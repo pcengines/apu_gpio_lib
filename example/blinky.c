@@ -6,6 +6,8 @@ int main(void) {
     int status, i;
     unsigned val = 1;
 
+    printf("Library version: %s\n", apu_gpio_version());
+
     status = apu_gpio_init();
     if (status < 0) {
         printf("GPIO library init failed: %d\n", status);

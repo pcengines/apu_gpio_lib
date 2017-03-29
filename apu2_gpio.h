@@ -36,6 +36,13 @@
 #define APU_DIR_OUT     0x1
 
 /*
+ * Returns library version string.
+ *
+ * @returns Version string
+ */
+const char *apu_gpio_version(void);
+
+/*
  * Initializes the library
  *
  * @retval APU_SUCCESS      Lib init ok

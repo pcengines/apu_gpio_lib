@@ -1,0 +1,10 @@
+/*
+ * CMake configuration file, do not modify
+ */
+
+#ifndef VERSION_H
+#define VERSION_H
+
+#define VERSION "${VERSION_STRING}"
+
+#endif

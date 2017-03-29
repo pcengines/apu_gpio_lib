@@ -9,6 +9,7 @@
 #include <unistd.h>
 
 #include <apu2_gpio.h>
+#include <version.h>
 
 #define FCH_ACPI_MMIO_BASE      0xFED80000
 #define FCH_GPIO_OFFSET         0x1500
@@ -20,6 +21,10 @@
 
 static volatile unsigned *gpio;
 static unsigned initialized = 0;
+
+const char *apu_gpio_version(void) {
+    return VERSION;
+}
 
 int apu_gpio_init(void) {
 
