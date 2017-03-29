@@ -1,3 +1,3 @@
-add_executable(gpio_example gpio.c)
+add_executable(blinky blinky.c)
 
-target_link_libraries (gpio_example LINK_PUBLIC ${PROJECT_NAME})
+target_link_libraries (blinky LINK_PUBLIC ${PROJECT_NAME})
