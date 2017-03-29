@@ -24,3 +24,18 @@ cd build
 cmake ..
 make
 ```
+
+Example
+-------
+
+After compilation. Example is in dir `build/example/blinky`.
+It blinks the LED2 and LED3 on APU.
+
+Library API
+-----------
+
+* `int apu_gpio_init(void)` - initializes the library and maps the gpio space
+* `int apu_gpio_get_dir(unsigned offset)` - gets gpio direction (1 - out, 0 - in)
+* `int apu_gpio_set_dir(unsigned offset, unsigned direction)` - sets gpio direction (1 - out, 0 - in)
+* `int apu_gpio_get_val(unsigned offset)` - gets gpio state
+* `int apu_gpio_set_val(unsigned offset, unsigned value)` - sets gpio value
