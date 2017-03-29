@@ -38,6 +38,9 @@ After compilation. Examples are in dir `build/example`.
 Library API
 -----------
 
+Short API summary:
+
+* `const char *apu_gpio_version(void)` - returns library version string
 * `int apu_gpio_init(void)` - initializes the library and maps the gpio space
 * `int apu_gpio_get_dir(unsigned offset)` - gets gpio direction (1 - out, 0 - in)
 * `int apu_gpio_set_dir(unsigned offset, unsigned direction)` - sets gpio direction (1 - out, 0 - in)
