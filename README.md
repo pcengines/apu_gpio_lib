@@ -16,7 +16,7 @@ Required tools to build
 How to compile
 --------------
 
-By default compiles shared library and example blinky program.
+By default compiles statically linked library and some examples.
 
 ```
 mkdir build
@@ -28,8 +28,9 @@ make
 Example
 -------
 
-After compilation. Example is in dir `build/example/blinky`.
-It blinks the LED2 and LED3 on APU.
+After compilation. Examples are in dir `build/example`.
+* `blinky` - it blinks the LED2 and LED3 on APU.
+* `simswap` - changes the simswap pin value. Usage: `./simswap value`
 
 Library API
 -----------
