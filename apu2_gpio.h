@@ -9,4 +9,6 @@
 #define APU_IO_ERROR    -1
 #define APU_MAP_FAILED  -2
 
+int apu_gpio_init(void);
+
 #endif
