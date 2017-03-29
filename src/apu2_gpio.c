@@ -19,6 +19,7 @@
 #define GPIO_BIT_READ           16
 
 static volatile unsigned *gpio;
+static unsigned initialized = 0;
 
 int apu_gpio_init(void) {
 
@@ -49,6 +50,8 @@ int apu_gpio_init(void) {
 
    gpio = (volatile unsigned *)(gpio_map + FCH_GPIO_OFFSET);
 
+   initialized = 1;
+
    return APU_SUCCESS;
 }
 
@@ -63,6 +66,9 @@ int apu_gpio_get_dir(unsigned offset)
 {
     uint32_t val;
 
+    if (!initialized)
+        return APU_NOT_INIT;
+
     if (!is_offset_valid(offset))
         return APU_INV_PARAM;
 
@@ -73,6 +79,9 @@ int apu_gpio_get_dir(unsigned offset)
 int apu_gpio_set_dir(unsigned offset, unsigned direction)
 {
     volatile uint32_t *val;
+
+    if (!initialized)
+        return APU_NOT_INIT;
 
     if (!is_offset_valid(offset))
         return APU_INV_PARAM;
@@ -90,6 +99,9 @@ int apu_gpio_get_val(unsigned offset)
 {
     uint32_t val;
 
+    if (!initialized)
+        return APU_NOT_INIT;
+
     if (!is_offset_valid(offset))
         return APU_INV_PARAM;
 
@@ -100,6 +112,9 @@ int apu_gpio_get_val(unsigned offset)
 int apu_gpio_set_val(unsigned offset, unsigned value)
 {
     volatile uint32_t *val;
+
+    if (!initialized)
+        return APU_NOT_INIT;
 
     if (!is_offset_valid(offset))
         return APU_INV_PARAM;

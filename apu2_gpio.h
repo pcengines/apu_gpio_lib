@@ -12,6 +12,7 @@
 #define APU_IO_ERROR    -1  // i/o error opening mem file
 #define APU_MAP_FAILED  -2  // mem mapping failed
 #define APU_INV_PARAM   -3  // invalid parameter
+#define APU_NOT_INIT    -4  // library not initialized
 
 //
 // GPIO offsets definitions
