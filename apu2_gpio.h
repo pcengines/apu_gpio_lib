@@ -22,6 +22,7 @@
 #define APU_GPIO_59     0x46
 #define APU_GPIO_32     0x59
 #define APU_GPIO_33     0x5A
+
 #define APU_LED1        APU_GPIO_57
 #define APU_LED2        APU_GPIO_58
 #define APU_LED3        APU_GPIO_59
@@ -34,10 +35,57 @@
 #define APU_DIR_IN      0x0
 #define APU_DIR_OUT     0x1
 
+/*
+ * Initializes the library
+ *
+ * @retval APU_SUCCESS      Lib init ok
+ * @retval APU_IO_ERROR     Error opening /dev/mem file
+ * @retval APU_MAP_FAILED   Error mapping the GPIO space
+ */
 int apu_gpio_init(void);
+
+/*
+ * Gets GPIO pin direction
+ *
+ * @param[in] offset        GPIO offset
+ *
+ * @returns                 1 - output, 0 - input
+ * @retval APU_INV_PARAM    GPIO offset invalid
+ * @retval APU_NOT_INIT     Library not initialized
+ */
 int apu_gpio_get_dir(unsigned offset);
+
+/*
+ * Sets GPIO pin direction
+ *
+ * @param[in] offset        GPIO offset
+ * @param[in] direction     0 - input, other - output
+ *
+ * @retval APU_INV_PARAM    GPIO offset invalid
+ * @retval APU_NOT_INIT     Library not initialized
+ */
 int apu_gpio_set_dir(unsigned offset, unsigned direction);
+
+/*
+ * Gets GPIO pin state
+ *
+ * @param[in] offset        GPIO offset
+ *
+ * @returns                 0 - low state, 1 - high state
+ * @retval APU_INV_PARAM    GPIO offset invalid
+ * @retval APU_NOT_INIT     Library not initialized
+ */
 int apu_gpio_get_val(unsigned offset);
+
+/*
+ * Sets GPIO pin value
+ *
+ * @param[in] offset        GPIO offset
+ * @param[in] value         GPIO value
+ *
+ * @retval APU_INV_PARAM    GPIO offset invalid
+ * @retval APU_NOT_INIT     Library not initialized
+ */
 int apu_gpio_set_val(unsigned offset, unsigned value);
 
 #endif
