@@ -23,6 +23,12 @@
 #define APU_GPIO_32     0x59
 #define APU_GPIO_33     0x5A
 
+#define APU_GPIO_51     0x42
+#define APU_GPIO_55     0x43
+#define APU_GPIO_64     0x47
+#define APU_GPIO_68     0x48
+#define APU_GPIO_70     0x4C
+
 #define APU_LED1        APU_GPIO_57
 #define APU_LED2        APU_GPIO_58
 #define APU_LED3        APU_GPIO_59
