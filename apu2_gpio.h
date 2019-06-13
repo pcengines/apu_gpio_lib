@@ -1,3 +1,7 @@
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
  * APU2/3 GPIO access library
  */
@@ -101,4 +105,8 @@ int apu_gpio_get_val(unsigned offset);
  */
 int apu_gpio_set_val(unsigned offset, unsigned value);
 
+#endif
+
+#ifdef __cplusplus
+}
 #endif
