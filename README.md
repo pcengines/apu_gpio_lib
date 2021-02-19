@@ -34,6 +34,8 @@ After compilation. Examples are in dir `build/example`.
     * `./simswap`   - shows current pin state
     * `./simswap 1` - sets the simswap pin value to 1
     * `./simswap 0` - sets the simswap pin value to 0
+* `apu2_gpiod` - a daemon that is only built on OpenBSD
+    to be run from rc.securelevel to control the LEDs
 
 Library API
 -----------
