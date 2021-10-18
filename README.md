@@ -46,3 +46,9 @@ Short API summary:
 * `int apu_gpio_set_dir(unsigned offset, unsigned direction)` - sets gpio direction (1 - out, 0 - in)
 * `int apu_gpio_get_val(unsigned offset)` - gets gpio state
 * `int apu_gpio_set_val(unsigned offset, unsigned value)` - sets gpio value
+
+Issues
+-----------
+
+If you want to create an issue, [here](https://github.com/pcengines/apu2-documentation/issues)
+is the right place for that.
