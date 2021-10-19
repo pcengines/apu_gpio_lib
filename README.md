@@ -50,5 +50,5 @@ Short API summary:
 Issues
 -----------
 
-If you want to create an issue, [here](https://github.com/pcengines/apu2-documentation/issues)
+If you want to report an issue, [here](https://github.com/pcengines/apu2-documentation/issues)
 is the right place for that.
