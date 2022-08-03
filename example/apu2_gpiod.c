@@ -30,7 +30,8 @@
 ** Start the daemon from rc.securelevel while direct memory
 ** access is allowed.
 **
-** Example rc.securelevel line:
+** Example rc.securelevel line (the file might have to be created).
+** See rc(8) or rc.securelevel(8):
 **     /root/bin/apu2_gpiod /var/apu2_gpio
 **
 ** The FIFO /var/apu2_gpio has to be created:
@@ -48,8 +49,8 @@
 **   All other characters are ignored
 **
 ** Examples:
-** # echo abC > /var/apu/gpio	# Set only the right LED to ON 
-** # echo 2: > /var/apu/gpio	# Toggle the middle LED
+** # echo abC > /var/apu2_gpio	# Set only the right LED to ON 
+** # echo 2: > /var/apu2_gpio	# Toggle the middle LED
 **
 ** The `:' in the latest example is used to avoid that the number
 ** `2' is interpreted as a file descriptor for the pipe operator
